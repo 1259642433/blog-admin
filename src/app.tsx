@@ -95,4 +95,46 @@ const errorHandler = (error: ResponseError) => {
 
 export const request: RequestConfig = {
   errorHandler,
+  prefix: 'http://localhost:12577',
+  timeout: 10000
 };
+
+// request拦截器, 改变url 或 options.
+// request.interceptors.response.use(async (url:string, options:object) => {
+
+//   const token = localStorage.getItem("x-auth-token");
+//   if (token) {
+//     const headers = {
+//       'Content-Type': 'application/json',
+//       'Accept': 'application/json',
+//       'x-auth-token': token
+//     };
+//     return (
+//       {
+//         url,
+//         options: { ...options, headers },
+//       }
+//     );
+//   } 
+//     const headers = {
+//       'Content-Type': 'application/json',
+//       'Accept': 'application/json',
+//       'x-auth-token': token
+//     };
+//     return (
+//       {
+//         url,
+//         options: { ...options },
+//       }
+//     );
+
+// })
+
+// // response拦截器, 处理response
+// request.interceptors.response.use((response, options) => {
+//   const token = response.headers.get("x-auth-token");
+//   if (token) {
+//     localStorage.setItem("x-auth-token", token);
+//   }
+//   return response;
+// });

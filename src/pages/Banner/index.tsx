@@ -73,6 +73,10 @@ const list = [
   },
 ];
 
+function getList(){
+  
+}
+
 function handleChange(id:number){
   message.info(`操作：修改，点击了${String(id)}`);
 }
